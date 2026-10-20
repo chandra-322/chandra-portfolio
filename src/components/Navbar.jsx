@@ -1,27 +1,29 @@
 
+import { Link } from "react-router-dom";
+
 function Navbar() {
   return (
     <header className="navbar">
-      <a href="#home" className="navbar-brand">
+      <Link to="/" className="navbar-brand">
         <span className="brand-symbol">C.</span>
 
         <span className="brand-name">
           CHANDRA
           <small>FILM ENTHUSIAST</small>
         </span>
-      </a>
+      </Link>
 
       <nav className="navbar-links">
-        <a href="#films">Films</a>
-        <a href="#work">Work</a>
-        <a href="#scripts">Scripts</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <Link to="/#films">Films</Link>
+        <Link to="/#work">Work</Link>
+        <Link to="/#scripts">Scripts</Link>
+        <Link to="/#about">About</Link>
+        <Link to="/#contact">Contact</Link>
       </nav>
 
-      <a href="#contact" className="navbar-cta">
+      <Link to="/#contact" className="navbar-cta">
         LET'S TALK <span>↗</span>
-      </a>
+      </Link>
     </header>
   );
 }
