@@ -29,7 +29,7 @@ const projects = [
     source: "Mirchi",
     music: "Hangova - Anirudh",
     description:
-      "A music-led visual crossover pairing Prabhas and Anushka Shetty montage footage from the Telugu film Mirchi with Hangova, a song from the Tamil film D.C composed by Anirudh Ravichander. The edit brings the performances and soundtrack together to create a cohesive visual and musical experience. The Clips are taken and combined from Movie Mirchi starring Prabhas and Anushka.",
+      "A music-led visual crossover pairing Prabhas and Anushka Shetty montage footage from the Telugu film Mirchi with Hangova, a song from the Tamil film D.C composed by Anirudh Ravichander. The edit brings the performances and soundtrack together to create a cohesive visual and musical experience.",
     approach:
       "Musical phrasing, shot selection and visual continuity guide the montage, connecting romantic moments with the rhythm and mood of the soundtrack.",
     techniques: [
