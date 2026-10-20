@@ -11,10 +11,15 @@ import ScriptsWriting from "./sections/ScriptsWriting.jsx";
 import About from "./sections/About.jsx";
 import Contact from "./sections/Contact.jsx";
 
+
+
 function HomePage() {
   return (
     <>
-      <Hero />
+      <div id="home">
+        <Hero />
+      </div>
+
       <Filmmaking />
       <VideoEditing />
       <ClientWork />
@@ -24,6 +29,7 @@ function HomePage() {
     </>
   );
 }
+
 
 function App() {
   return (

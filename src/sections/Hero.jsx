@@ -6,7 +6,7 @@ function Hero() {
 
       <div className="hero-content">
         <div className="hero-copy">
-          <h1 className="hero-name">CHANDRA.</h1>
+          <h1 className="hero-name">CHANDRA</h1>
 
           <p className="hero-description">
             I create films, edit visuals and bring ideas to life

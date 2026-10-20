@@ -1,4 +1,3 @@
-
 /* ==================================================
    CADHIRA PRODUCTIONS
    Global Design System
@@ -216,727 +215,6 @@ textarea:focus-visible {
 /* =========================================
    CINEMATIC EDITORIAL TYPOGRAPHY
 ========================================= */
-
-
-
-
-
-/* ==================================================
-   04. VIDEO EDITING — OPEN EDITORIAL GALLERY
-================================================== */
-
-.editing-section {
-  width: 100%;
-  padding: 100px var(--page-gutter) 35px;
-  overflow: hidden;
-  background: var(--paper);
-  color: var(--dark-text);
-}
-
-.editing-heading {
-  max-width: 1000px;
-  margin-bottom: 65px;
-}
-
-.section-eyebrow {
-  margin: 0 0 20px;
-  color: #a92323;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.editing-heading h2 {
-  margin: 0;
-  font-size: clamp(48px, 7vw, 88px);
-  font-weight: 750;
-  letter-spacing: -4px;
-  line-height: 1.02;
-}
-
-.editing-heading h2 span {
-  color: #817b74;
-}
-
-.editing-intro {
-  max-width: 430px;
-  margin: 22px 0 0;
-  color: var(--dark-muted);
-  font-size: 17px;
-  line-height: 1.8;
-}
-
-.editing-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  align-items: start;
-  column-gap: 7%;
-  row-gap: 65px;
-}
-
-.editing-project {
-  min-width: 0;
-}
-
-.edit-shape-one {
-  grid-column: 1 / -1;
-  width: 83%;
-  justify-self: center;
-}
-
-.edit-shape-two {
-  width: 100%;
-  margin-top: 35px;
-}
-
-.edit-shape-three {
-  width: 100%;
-  margin-top: 105px;
-}
-
-/* Consistent four-corner rounding */
-
-.editing-section .editing-image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  border-radius: var(--corner);
-  background: #292825;
-}
-
-.editing-section .edit-shape-one .editing-image {
-  aspect-ratio: 16 / 9;
-  border-radius: var(--corner-large);
-}
-
-.editing-section .editing-image-placeholder {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  background: #292825;
-  color: var(--paper);
-}
-
-.editing-section .edit-shape-two .editing-image-placeholder {
-  background: #38312e;
-}
-
-.editing-section .edit-shape-three .editing-image-placeholder {
-  background: #343633;
-}
-
-.editing-section .editing-image-placeholder span:first-child {
-  color: #e04a42;
-  font-size: 15px;
-  letter-spacing: 2px;
-}
-
-.editing-section .editing-image-placeholder span:last-child {
-  font-size: 11px;
-  letter-spacing: 2px;
-}
-
-.editing-section .editing-image video,
-.editing-section .editing-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.editing-section .editing-image video {
-  background: #111;
-}
-
-.editing-project-info {
-  padding: 22px 5px 0;
-}
-
-.editing-project-info p {
-  margin: 0 0 8px;
-  color: #8c2824;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.2px;
-}
-
-.editing-project-info h3 {
-  margin: 0 0 8px;
-  font-size: clamp(25px, 3vw, 36px);
-  font-weight: 700;
-  letter-spacing: -1px;
-  line-height: 1.2;
-}
-
-.editing-project-info > span {
-  display: block;
-  max-width: 440px;
-  color: var(--dark-muted);
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-.editing-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 85px;
-  padding-top: 17px;
-  border-top: 1px solid var(--line-light);
-  color: #6d675f;
-  font-size: 10px;
-  letter-spacing: 1.1px;
-}
-
-
-/* ==================================================
-   05. TABLET
-================================================== */
-
-@media (max-width: 1000px) {
-  :root {
-    --page-gutter: 5%;
-  }
-
-  .navbar {
-    gap: 20px;
-  }
-
-  .navbar-links {
-    gap: 20px;
-  }
-
-  .hero-content {
-    gap: 4%;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(46px, 6vw, 64px);
-    letter-spacing: -2.5px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-  }
-
-  .editing-heading h2 {
-    font-size: clamp(48px, 7vw, 72px);
-  }
-}
-
-
-/* ==================================================
-   06. MOBILE
-================================================== */
-
-@media (max-width: 720px) {
-  :root {
-    --page-gutter: 5%;
-    --corner: 22px;
-    --corner-large: 28px;
-  }
-
-  .navbar {
-    min-height: auto;
-    flex-wrap: wrap;
-    gap: 14px;
-    padding-top: 16px;
-    padding-bottom: 16px;
-  }
-
-  .navbar-links {
-    order: 3;
-    width: 100%;
-    justify-content: space-between;
-    gap: 12px;
-  }
-
-  .navbar-links a {
-    font-size: 13px;
-  }
-
-  .navbar-cta {
-    min-height: 40px;
-    padding: 8px 11px;
-    font-size: 10px;
-  }
-
-  .brand-symbol {
-    font-size: 34px;
-  }
-
-  .brand-name {
-    font-size: 13px;
-  }
-
-  .hero {
-    padding-top: 22px;
-  }
-
-  .hero-topline,
-  .hero-bottomline {
-    gap: 12px;
-    font-size: 9px;
-    letter-spacing: 0.5px;
-  }
-
-  .hero-content {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-    padding: 42px 0;
-  }
-
-  .hero-copy h1 {
-    font-size: clamp(54px, 11vw, 76px);
-    letter-spacing: -3px;
-  }
-
-  .hero-description {
-    max-width: 450px;
-  }
-
-  .hero-visual {
-    height: min(105vw, 430px);
-  }
-
-  .hero-image-label {
-    right: 12px;
-    left: 12px;
-    font-size: 8px;
-  }
-
-  .editing-section {
-    padding-top: 70px;
-  }
-
-  .editing-heading {
-    margin-bottom: 42px;
-  }
-
-  .editing-heading h2 {
-    font-size: clamp(44px, 10vw, 65px);
-    letter-spacing: -2.5px;
-  }
-
-  .editing-intro {
-    font-size: 16px;
-  }
-
-  .editing-gallery {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 42px;
-  }
-
-  .edit-shape-one,
-  .edit-shape-two,
-  .edit-shape-three {
-    grid-column: auto;
-    width: 100%;
-    margin-top: 0;
-  }
-
-  .edit-shape-one .editing-image {
-    aspect-ratio: 16 / 9;
-  }
-
-  .editing-project-info h3 {
-    font-size: 28px;
-  }
-
-  .editing-footer {
-    flex-direction: column;
-    gap: 8px;
-    margin-top: 50px;
-  }
-}
-
-
-/* ==================================================
-   07. SMALL PHONES
-================================================== */
-
-@media (max-width: 420px) {
-  .navbar {
-    gap: 12px;
-  }
-
-  .navbar-links a {
-    font-size: 12px;
-  }
-
-  .hero-copy h1 {
-    font-size: 52px;
-    letter-spacing: -2.5px;
-  }
-
-  .hero-description {
-    font-size: 16px;
-  }
-
-  .hero-actions {
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .hero-button {
-    gap: 12px;
-    padding: 13px 14px;
-  }
-
-  .hero-image-label {
-    right: 10px;
-    left: 10px;
-    font-size: 8px;
-  }
-
-  .editing-heading h2 {
-    font-size: 44px;
-    letter-spacing: -2px;
-  }
-}
-
-
-/* ==================================================
-   08. REDUCED MOTION ACCESSIBILITY
-================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-}
-
-
-
-/* =====================================
-   FEATURED VIDEO EDITING PROJECTS
-===================================== */
-
-.editing-section {
-  --editing-bg: #10100f;
-  --editing-card: #1b1a18;
-  --editing-text: #f1eee7;
-  --editing-muted: #aaa49b;
-  --editing-red: #c52b2b;
-
-  padding: 100px 7% 35px;
-  background: var(--editing-bg);
-  color: var(--editing-text);
-}
-
-.editing-container {
-  max-width: 1500px;
-  margin: 0 auto;
-}
-
-.editing-heading {
-  max-width: 720px;
-  margin: 0 auto 60px;
-  text-align: center;
-}
-
-.editing-section .section-eyebrow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  margin: 0 0 20px;
-  color: #d6d0c7;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.editing-dot {
-  width: 9px;
-  height: 9px;
-  border-radius: 50%;
-  background: var(--editing-red);
-  box-shadow: 0 0 14px #c52b2b70;
-}
-
-.editing-heading h2 {
-  margin: 0;
-  font-size: clamp(48px, 6vw, 76px);
-  font-weight: 750;
-  letter-spacing: -3.5px;
-  line-height: 1.05;
-}
-
-.editing-heading h2 span {
-  color: #a9a39a;
-}
-
-.editing-section .editing-intro {
-  max-width: 570px;
-  margin: 22px auto 25px;
-  color: var(--editing-muted);
-  font-size: 16px;
-  line-height: 1.85;
-}
-
-.editing-view-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 0;
-  color: var(--editing-text);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-decoration: none;
-}
-
-.editing-view-link span {
-  color: var(--editing-red);
-  font-size: 19px;
-  transition: transform 200ms ease;
-}
-
-.editing-view-link:hover span {
-  transform: translate(4px, 4px);
-}
-
-/* Three-project layout */
-
-.editing-project-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 30px;
-  align-items: start;
-}
-
-.editing-card {
-  min-width: 0;
-  overflow: hidden;
-  border: 1px solid #302e2b;
-  border-radius: 25px;
-  background: var(--editing-card);
-  transition:
-    border-color 250ms ease,
-    transform 250ms ease;
-}
-
-.editing-card:hover {
-  border-color: #62504a;
-  transform: translateY(-5px);
-}
-
-.editing-card-03 {
-  grid-column: 1 / -1;
-}
-
-/* Thumbnail */
-
-.editing-card-media {
-  position: relative;
-  aspect-ratio: 16 / 9;
-  overflow: hidden;
-  margin: 10px;
-  border-radius: 17px;
-  background: #292724;
-}
-
-.editing-card-03 .editing-card-media {
-  aspect-ratio: 2.1 / 1;
-}
-
-.editing-card-media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 450ms ease;
-}
-
-.editing-card:hover .editing-card-media img {
-  transform: scale(1.035);
-}
-
-.editing-card-number {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  display: grid;
-  width: 42px;
-  height: 42px;
-  place-items: center;
-  border: 1px solid #ffffff45;
-  border-radius: 50%;
-  background: #111110b8;
-  color: white;
-  font-size: 12px;
-  backdrop-filter: blur(8px);
-}
-
-.editing-card-play {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  display: grid;
-  width: 43px;
-  height: 43px;
-  place-items: center;
-  border: 1px solid #ffffff50;
-  border-radius: 50%;
-  background: #111110bd;
-  color: white;
-  font-size: 21px;
-  backdrop-filter: blur(8px);
-}
-
-/* Project information */
-
-.editing-card-content {
-  padding: 18px 23px 25px;
-}
-
-.editing-card-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-  color: var(--editing-muted);
-  font-size: 10px;
-  letter-spacing: 1.1px;
-}
-
-.editing-card-meta span:first-child {
-  color: #e46b63;
-  font-weight: 700;
-}
-
-.editing-card-content h3 {
-  margin: 17px 0 12px;
-  font-size: clamp(23px, 2.5vw, 34px);
-  font-weight: 700;
-  letter-spacing: -1px;
-  line-height: 1.2;
-}
-
-.editing-card-description {
-  max-width: 650px;
-  margin: 0;
-  color: #b9b3aa;
-  font-size: 14px;
-  line-height: 1.9;
-}
-
-.editing-card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.editing-card-tags span {
-  padding: 6px 11px;
-  border: 1px solid #3b3834;
-  border-radius: 999px;
-  color: #d1cbc2;
-  font-size: 11px;
-}
-
-.editing-card-process {
-  margin-top: 22px;
-  padding-top: 17px;
-  border-top: 1px solid #393632;
-}
-
-.editing-card-process > span {
-  color: #918a80;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1.4px;
-}
-
-.editing-card-process p {
-  margin: 6px 0 0;
-  color: var(--editing-text);
-  font-size: 13px;
-}
-
-/* Footer */
-
-.editing-section .editing-footer {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  margin-top: 45px;
-  padding-top: 18px;
-  border-top: 1px solid #34312e;
-  color: #918a80;
-  font-size: 10px;
-  letter-spacing: 1.2px;
-}
-
-/* Responsive */
-
-@media (max-width: 720px) {
-  .editing-section {
-    padding: 75px 5% 28px;
-  }
-
-  .editing-heading {
-    margin-bottom: 38px;
-  }
-
-  .editing-heading h2 {
-    font-size: clamp(45px, 10vw, 64px);
-    letter-spacing: -2.5px;
-  }
-
-  .editing-section .editing-intro {
-    font-size: 15px;
-  }
-
-  .editing-project-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
-  }
-
-  .editing-card-03 {
-    grid-column: auto;
-  }
-
-  .editing-card-03 .editing-card-media {
-    aspect-ratio: 16 / 9;
-  }
-
-  .editing-card-content {
-    padding: 15px 17px 21px;
-  }
-
-  .editing-card-content h3 {
-    font-size: 27px;
-  }
-
-  .editing-section .editing-footer {
-    flex-direction: column;
-    gap: 9px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .editing-card,
-  .editing-card-media img,
-  .editing-view-link span {
-    transition: none;
-  }
-}
 
 
 /* ==================================
@@ -1210,370 +488,6 @@ textarea:focus-visible {
 
 @media (prefers-reduced-motion: reduce) {
   .editing-card {
-    transition: none;
-  }
-}
-
-/* VIDEO THUMBNAILS AND PLAYBACK */
-
-.editing-media {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  margin: 10px;
-  border-radius: 16px;
-  background: #090909;
-}
-
-.editing-card-03 .editing-media {
-  aspect-ratio: 2.1 / 1;
-}
-
-.editing-media video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: #090909;
-}
-
-/* Dark overlay makes thumbnail text readable */
-
-.editing-media::after {
-  position: absolute;
-  z-index: 1;
-  inset: 0;
-  content: "";
-  pointer-events: none;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0.2) 0%,
-    transparent 35%,
-    transparent 60%,
-    rgba(0, 0, 0, 0.45) 100%
-  );
-  transition: opacity 250ms ease;
-}
-
-.editing-card:hover .editing-media::after {
-  opacity: 0.7;
-}
-
-/* Centered circular play button */
-
-.editing-play-button {
-  position: absolute;
-  z-index: 3;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  width: 68px;
-  height: 68px;
-  padding: 0;
-  place-items: center;
-  border: 1px solid #ffffffa0;
-  border-radius: 50%;
-  background: rgba(20, 19, 18, 0.78);
-  color: #fff;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(10px);
-  transition:
-    background 200ms ease,
-    border-color 200ms ease,
-    transform 200ms ease;
-}
-
-.editing-play-icon {
-  margin-left: 4px;
-  font-size: 19px;
-}
-
-.editing-play-button:hover {
-  border-color: #c52b2b;
-  background: #c52b2b;
-  transform: translate(-50%, -50%) scale(1.08);
-}
-
-.editing-play-button:focus-visible,
-.editing-pause-button:focus-visible {
-  outline: 2px solid #fff;
-  outline-offset: 4px;
-}
-
-/* Project number stays above the thumbnail */
-
-.editing-number {
-  position: absolute;
-  z-index: 3;
-  top: 13px;
-  left: 13px;
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border: 1px solid #ffffff60;
-  border-radius: 50%;
-  background: #10100fbf;
-  color: #fff;
-  font-size: 11px;
-  pointer-events: none;
-}
-
-/* Bottom label */
-
-.editing-preview-label {
-  position: absolute;
-  z-index: 3;
-  right: 15px;
-  bottom: 14px;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  color: #fff;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  pointer-events: none;
-}
-
-.editing-preview-label span {
-  color: #ed6b63;
-  font-size: 16px;
-}
-
-/* Pause control appears during playback */
-
-.editing-pause-button {
-  position: absolute;
-  z-index: 4;
-  right: 12px;
-  bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 12px;
-  border: 1px solid #ffffff60;
-  border-radius: 30px;
-  background: rgba(15, 15, 15, 0.82);
-  color: white;
-  font-size: 10px;
-  letter-spacing: 1px;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 200ms ease;
-}
-
-.editing-media:hover .editing-pause-button,
-.editing-pause-button:focus-visible {
-  opacity: 1;
-}
-
-@media (max-width: 720px) {
-  .editing-card-03 .editing-media {
-    aspect-ratio: 16 / 9;
-  }
-
-  .editing-play-button {
-    width: 58px;
-    height: 58px;
-  }
-
-  .editing-pause-button {
-    opacity: 1;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .editing-play-button,
-  .editing-media::after,
-  .editing-pause-button {
-    transition: none;
-  }
-}
-
-
-/* VIDEO THUMBNAILS AND CUSTOM CONTROLS */
-
-.editing-media {
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  aspect-ratio: 16 / 9;
-  margin: 10px;
-  border-radius: 16px;
-  background: #090909;
-}
-
-.editing-card-03 .editing-media {
-  aspect-ratio: 2.1 / 1;
-}
-
-.editing-media video {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background: #090909;
-}
-
-/* Center play button */
-
-.editing-play-button {
-  position: absolute;
-  z-index: 3;
-  top: 50%;
-  left: 50%;
-  display: grid;
-  width: 70px;
-  height: 70px;
-  place-items: center;
-  padding: 0;
-  border: 1px solid #ffffffa0;
-  border-radius: 50%;
-  background: #141312c9;
-  color: white;
-  font-size: 22px;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  backdrop-filter: blur(10px);
-  transition: background 200ms ease, transform 200ms ease;
-}
-
-.editing-play-button:hover {
-  background: #c52b2b;
-  transform: translate(-50%, -50%) scale(1.08);
-}
-
-.editing-number {
-  position: absolute;
-  z-index: 3;
-  top: 13px;
-  left: 13px;
-  display: grid;
-  width: 40px;
-  height: 40px;
-  place-items: center;
-  border: 1px solid #ffffff60;
-  border-radius: 50%;
-  background: #10100fbf;
-  color: white;
-  font-size: 11px;
-  pointer-events: none;
-}
-
-/* Playback controls */
-
-.editing-video-controls {
-  position: absolute;
-  z-index: 5;
-  right: 10px;
-  bottom: 10px;
-  left: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  padding: 8px 12px;
-  border: 1px solid #ffffff20;
-  border-radius: 12px;
-  background: #101010e8;
-  color: white;
-  backdrop-filter: blur(12px);
-}
-
-.editing-video-controls button {
-  display: grid;
-  flex: 0 0 auto;
-  width: 32px;
-  height: 32px;
-  place-items: center;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: transparent;
-  color: white;
-  font-size: 17px;
-  cursor: pointer;
-}
-
-.editing-video-controls button:hover {
-  background: #c52b2b;
-}
-
-.editing-video-time {
-  flex: 0 0 auto;
-  color: #ddd7ce;
-  font-size: 10px;
-  font-variant-numeric: tabular-nums;
-}
-
-.editing-video-progress {
-  width: 100%;
-  min-width: 20px;
-  height: 4px;
-  accent-color: #c52b2b;
-  cursor: pointer;
-}
-
-/* Fullscreen */
-
-.editing-media:fullscreen {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0;
-  border-radius: 0;
-  background: #000;
-  aspect-ratio: auto;
-}
-
-.editing-media:fullscreen video {
-  width: 100%;
-  height: 100%;
-  max-height: 100vh;
-  object-fit: contain;
-}
-
-.editing-media:fullscreen .editing-video-controls {
-  right: 24px;
-  bottom: 24px;
-  left: 24px;
-}
-
-.editing-media:fullscreen .editing-number {
-  top: 24px;
-  left: 24px;
-}
-
-@media (max-width: 720px) {
-  .editing-card-03 .editing-media {
-    aspect-ratio: 16 / 9;
-  }
-
-  .editing-play-button {
-    width: 58px;
-    height: 58px;
-  }
-
-  .editing-video-controls {
-    gap: 5px;
-    padding: 6px;
-  }
-
-  .editing-video-controls button {
-    width: 29px;
-    height: 29px;
-  }
-
-  .editing-video-time {
-    font-size: 9px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .editing-play-button {
     transition: none;
   }
 }
@@ -2586,7 +1500,6 @@ textarea:focus-visible {
 }
 
 
-
 /* ========================================
    ABOUT — EDITORIAL CINEMATIC LAYOUT
 ======================================== */
@@ -3018,7 +1931,6 @@ textarea:focus-visible {
     transition: none;
   }
 }
-
 
 
 /* ========================================
@@ -4300,7 +3212,6 @@ textarea:focus-visible {
 }
 
 
-
 .film-drive-player {
   position: relative;
   width: 100%;
@@ -4315,4 +3226,344 @@ textarea:focus-visible {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: transform 0.3s ease;
+  will-change: transform;
+}
+
+.navbar-visible {
+  transform: translateY(0);
+}
+
+.navbar-hidden {
+  transform: translateY(-110%);
+  pointer-events: none;
+}
+
+#home,
+#films,
+#work,
+#scripts,
+#about,
+#contact {
+  scroll-margin-top: 100px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar {
+    transition: none;
+  }
+}
+
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-menu-toggle,
+.mobile-contact-link {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .navbar {
+    padding: 16px 20px;
+    gap: 14px;
+  }
+
+  .navbar-brand {
+    min-width: 0;
+  }
+
+  .brand-symbol {
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .brand-name small {
+    font-size: 9px;
+    letter-spacing: 2px;
+  }
+
+  .navbar-actions {
+    margin-left: auto;
+  }
+
+  .navbar-cta {
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  .navbar-menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background: transparent;
+    color: #f5f0e8;
+    font-size: 22px;
+    cursor: pointer;
+  }
+
+  .navbar-links {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    order: 3;
+  }
+
+  .navbar-links.menu-open {
+    display: flex;
+  }
+
+  .navbar-links a {
+    padding: 14px 0;
+    border-top: 1px solid #292929;
+  }
+
+  .navbar-links .mobile-contact-link {
+    display: block;
+  }
+}
+
+@media (max-width: 380px) {
+  .navbar {
+    padding-inline: 12px;
+    gap: 8px;
+  }
+
+  .brand-name {
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+
+  .brand-name small {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .navbar-cta {
+    font-size: 10px;
+  }
+
+  .navbar-actions {
+    gap: 7px;
+  }
+}
+
+
+.film-player,
+.film-drive-player {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 18px;
+}
+
+.film-player iframe,
+.film-drive-player iframe {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .film-player,
+  .film-drive-player {
+    border-radius: 12px;
+  }
+}
+
+
+/* ==================================================
+   GOOGLE DRIVE EDITING PLAYER
+   Single source of truth for editing thumbnails and playback
+================================================== */
+
+.editing-drive-media {
+  position: relative;
+  display: block;
+  width: auto;
+  min-width: 0;
+  aspect-ratio: 16 / 9;
+  margin: 10px;
+  padding: 0;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 16px;
+  background: #000;
+}
+
+.editing-drive-media iframe {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: #000;
+}
+
+.editing-thumbnail-button {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.editing-thumbnail-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.editing-thumbnail-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.12) 55%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+}
+
+.editing-thumbnail-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: rgba(15, 15, 15, 0.45);
+  backdrop-filter: blur(8px);
+  transform: translate(-50%, -50%);
+  transition: background 250ms ease, transform 250ms ease;
+}
+
+.editing-thumbnail-play span {
+  margin-left: 4px;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.editing-thumbnail-label {
+  position: absolute;
+  right: 18px;
+  bottom: 17px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.editing-thumbnail-button .editing-number {
+  position: absolute;
+  z-index: 2;
+  top: 15px;
+  left: 15px;
+  pointer-events: none;
+}
+
+.editing-thumbnail-button:hover .editing-thumbnail-image {
+  transform: scale(1.045);
+}
+
+.editing-thumbnail-button:hover .editing-thumbnail-play {
+  background: rgba(190, 35, 45, 0.9);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.editing-thumbnail-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
+@media (max-width: 720px) {
+  .editing-project-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .editing-card,
+  .editing-card-03 {
+    grid-column: auto;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .editing-drive-media {
+    width: auto;
+    aspect-ratio: 16 / 9;
+    margin: 8px;
+    border-radius: 12px;
+  }
+
+  .editing-thumbnail-play {
+    width: 54px;
+    height: 54px;
+  }
+
+  .editing-thumbnail-label {
+    right: 12px;
+    bottom: 12px;
+    font-size: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .editing-thumbnail-image,
+  .editing-thumbnail-play {
+    transition: none;
+  }
 }
