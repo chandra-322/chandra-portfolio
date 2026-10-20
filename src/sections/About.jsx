@@ -82,7 +82,7 @@ function About() {
               </p>
             </blockquote>
 
-            <a className="about-contact-link" href="#work">
+            <a className="about-contact-link" href="#films">
               EXPLORE MY WORK
               <span>↗</span>
             </a>
