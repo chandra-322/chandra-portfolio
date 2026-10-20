@@ -4171,3 +4171,148 @@ textarea:focus-visible {
     transition: none;
   }
 }
+
+
+/* Editing section: thumbnail preview and embedded player */
+
+.editing-drive-media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+
+.editing-drive-media iframe {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: #111;
+}
+
+.editing-thumbnail-button {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  background: #111;
+  color: #fff;
+  cursor: pointer;
+  text-align: left;
+}
+
+.editing-thumbnail-image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.editing-thumbnail-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    transparent 35%,
+    rgba(0, 0, 0, 0.12) 55%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  transition: background 300ms ease;
+}
+
+.editing-thumbnail-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: 66px;
+  height: 66px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  background: rgba(15, 15, 15, 0.45);
+  backdrop-filter: blur(8px);
+  transform: translate(-50%, -50%);
+  transition:
+    background 250ms ease,
+    transform 250ms ease;
+}
+
+.editing-thumbnail-play span {
+  margin-left: 4px;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.editing-thumbnail-label {
+  position: absolute;
+  right: 18px;
+  bottom: 17px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+}
+
+.editing-thumbnail-button .editing-number {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.editing-thumbnail-button:hover .editing-thumbnail-image {
+  transform: scale(1.045);
+}
+
+.editing-thumbnail-button:hover .editing-thumbnail-play {
+  background: rgba(190, 35, 45, 0.9);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.editing-thumbnail-button:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
+@media (max-width: 600px) {
+  .editing-thumbnail-play {
+    width: 54px;
+    height: 54px;
+  }
+
+  .editing-thumbnail-label {
+    right: 12px;
+    bottom: 12px;
+    font-size: 9px;
+  }
+}
+
+
+
+.film-drive-player {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #111;
+}
+
+.film-drive-player iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

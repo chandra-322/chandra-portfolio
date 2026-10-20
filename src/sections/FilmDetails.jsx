@@ -33,7 +33,8 @@ const filmDetails = {
     ],
 
     poster: "/films/the-block_1.png",
-    video: "/films/the-block.mp4",
+    video:
+      "https://drive.google.com/file/d/1o5MJpWVeLMUePfC1JQCIFuGuP9_pMLAN/preview",
   },
 
   zero: {
@@ -67,7 +68,8 @@ const filmDetails = {
     ],
 
     poster: "/films/zero_1.png",
-    video: "/films/zero.mp4",
+    video:
+      "https://drive.google.com/file/d/1TtD4wiP8sKCR5JULLbcMxrQ21B6-WuOe/preview",
   },
 };
 
@@ -134,17 +136,15 @@ function FilmDetails() {
             </p>
           </div>
 
-          <div className="film-player">
-            <video
-              controls
-              playsInline
-              preload="metadata"
-              poster={film.poster}
-              aria-label={`Watch ${film.title}`}
-            >
-              <source src={film.video} type="video/mp4" />
-              Your browser does not support HTML video playback.
-            </video>
+          <div className="film-player film-drive-player">
+            <iframe
+              src={film.video}
+              title={`Watch ${film.title}`}
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
           </div>
 
           <p className="film-player-caption">

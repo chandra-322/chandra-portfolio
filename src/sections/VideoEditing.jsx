@@ -1,5 +1,5 @@
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const projects = [
   {
@@ -18,7 +18,8 @@ const projects = [
       "Music Synchronization",
       "Cinematic Pacing",
     ],
-    video: "/projects/videos/project-01.mp4",
+    video:
+      "https://drive.google.com/file/d/1A8SVjzeX9sF8jABecskXzSTLCIGC9_S7/preview",
     thumbnail: "/projects/thumbnails/project-01.png",
   },
   {
@@ -28,7 +29,7 @@ const projects = [
     source: "Mirchi",
     music: "Hangova - Anirudh",
     description:
-      "A music-led visual crossover pairing Prabhas and Anushka Shetty montage footage from the Telugu film Mirchi with Hangova, a song from the Tamil film D.C composed by Anirudh Ravichander. The edit brings the performances and soundtrack together to create a cohesive visual and musical experience.",
+      "A music-led visual crossover pairing Prabhas and Anushka Shetty montage footage from the Telugu film Mirchi with Hangova, a song from the Tamil film D.C composed by Anirudh Ravichander. The edit brings the performances and soundtrack together to create a cohesive visual and musical experience. The Clips are taken and combined from Movie Mirchi starring Prabhas and Anushka.",
     approach:
       "Musical phrasing, shot selection and visual continuity guide the montage, connecting romantic moments with the rhythm and mood of the soundtrack.",
     techniques: [
@@ -37,7 +38,8 @@ const projects = [
       "Visual Continuity",
       "Mood Building",
     ],
-    video: "/projects/videos/project-02.mp4",
+    video:
+      "https://drive.google.com/file/d/1NJeXlXCH6ero_d-I2bIer3h32UWSW12Y/preview",
     thumbnail: "/projects/thumbnails/project-02.jpg",
   },
   {
@@ -56,171 +58,61 @@ const projects = [
       "Soundtrack Pairing",
       "Visual Rhythm",
     ],
-    video: "/projects/videos/project-03.mp4",
+    video:
+      "https://drive.google.com/file/d/1oWWOqSbgalfO76N0dbXkhYSaMxwRKLtJ/preview",
     thumbnail: "/projects/thumbnails/project-03.png",
   },
 ];
 
-function formatTime(seconds) {
-  if (!Number.isFinite(seconds)) return "0:00";
-
-  const mins = Math.floor(seconds / 60);
-  const secs = Math.floor(seconds % 60);
-
-  return `${mins}:${String(secs).padStart(2, "0")}`;
-}
-
 function VideoProject({ project }) {
-  const videoRef = useRef(null);
-  const mediaRef = useRef(null);
-
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [duration, setDuration] = useState(0);
-
-  async function togglePlayback() {
-    const video = videoRef.current;
-    if (!video) return;
-
-    if (video.paused) {
-      try {
-        await video.play();
-      } catch (error) {
-        console.error("Video playback failed:", error);
-      }
-    } else {
-      video.pause();
-    }
-  }
-
-  function toggleSound() {
-    const video = videoRef.current;
-    if (!video) return;
-
-    video.muted = !video.muted;
-    setIsMuted(video.muted);
-  }
-
-  async function toggleFullscreen() {
-    const media = mediaRef.current;
-    const video = videoRef.current;
-
-    if (!media || !video) return;
-
-    try {
-      if (document.fullscreenElement === media) {
-        await document.exitFullscreen();
-      } else if (media.requestFullscreen) {
-        await media.requestFullscreen();
-      } else if (video.webkitEnterFullscreen) {
-        video.webkitEnterFullscreen();
-      }
-    } catch (error) {
-      console.error("Fullscreen could not be opened:", error);
-    }
-  }
-
-  function seekVideo(event) {
-    const video = videoRef.current;
-    if (!video || !Number.isFinite(duration)) return;
-
-    const time = Number(event.target.value);
-    video.currentTime = time;
-    setCurrentTime(time);
-  }
-
-  function handleLoadedMetadata() {
-    const video = videoRef.current;
-    if (!video) return;
-
-    setDuration(
-      Number.isFinite(video.duration) ? video.duration : 0
-    );
-  }
-
-  function handleTimeUpdate() {
-    const video = videoRef.current;
-    if (!video) return;
-
-    setCurrentTime(video.currentTime || 0);
-  }
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <article className={`editing-card editing-card-${project.number}`}>
-      <div className="editing-media" ref={mediaRef}>
-        <video
-          ref={videoRef}
-          src={project.video}
-          poster={project.thumbnail}
-          preload="metadata"
-          playsInline
-          muted
-          onPlay={() => setIsPlaying(true)}
-          onPause={() => setIsPlaying(false)}
-          onTimeUpdate={handleTimeUpdate}
-          onLoadedMetadata={handleLoadedMetadata}
-          onDurationChange={handleLoadedMetadata}
-          onEnded={() => setIsPlaying(false)}
-        />
-
-        {!isPlaying && (
+      <div className="editing-media editing-drive-media">
+        {!isOpen ? (
           <button
-            className="editing-play-button"
             type="button"
-            onClick={togglePlayback}
+            className="editing-thumbnail-button"
+            onClick={() => setIsOpen(true)}
             aria-label={`Play ${project.title}`}
           >
-            <span aria-hidden="true">▶</span>
-          </button>
-        )}
-
-        <span className="editing-number">{project.number}</span>
-
-        {isPlaying && (
-          <div className="editing-video-controls">
-            <button
-              type="button"
-              onClick={togglePlayback}
-              aria-label="Pause video"
-              title="Pause"
-            >
-              Ⅱ
-            </button>
-
-            <button
-              type="button"
-              onClick={toggleSound}
-              aria-label={isMuted ? "Unmute video" : "Mute video"}
-              title={isMuted ? "Unmute" : "Mute"}
-            >
-              {isMuted ? "🔇" : "🔊"}
-            </button>
-
-            <span className="editing-video-time">
-              {formatTime(currentTime)} / {formatTime(duration)}
-            </span>
-
-            <input
-              className="editing-video-progress"
-              type="range"
-              min="0"
-              max={duration || 0}
-              step="0.1"
-              value={Math.min(currentTime, duration || 0)}
-              onChange={seekVideo}
-              aria-label="Video progress"
+            <img
+              className="editing-thumbnail-image"
+              src={project.thumbnail}
+              alt={`${project.title} thumbnail`}
+              loading="lazy"
             />
 
-            <button
-              type="button"
-              onClick={toggleFullscreen}
-              aria-label="Toggle fullscreen"
-              title="Fullscreen"
+            <span
+              className="editing-thumbnail-shade"
+              aria-hidden="true"
+            />
+
+            <span
+              className="editing-thumbnail-play"
+              aria-hidden="true"
             >
-              ⛶
-            </button>
-          </div>
+              <span>▶</span>
+            </span>
+
+            <span className="editing-number">
+              {project.number}
+            </span>
+
+            <span className="editing-thumbnail-label">
+              WATCH EDIT
+            </span>
+          </button>
+        ) : (
+          <iframe
+            src={project.video}
+            title={`Watch ${project.title}`}
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowFullScreen
+            loading="eager"
+            referrerPolicy="strict-origin-when-cross-origin"
+          />
         )}
       </div>
 
