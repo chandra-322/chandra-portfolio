@@ -10,6 +10,7 @@ import ClientWork from "./sections/ClientWork.jsx";
 import ScriptsWriting from "./sections/ScriptsWriting.jsx";
 import About from "./sections/About.jsx";
 import Contact from "./sections/Contact.jsx";
+import { Analytics } from "@vercel/analytics/react";
 
 
 
@@ -41,7 +42,9 @@ function App() {
         <Route path="/films/:slug" element={<FilmDetails />} />
         <Route path="*" element={<HomePage />} />
       </Routes>
+      <Analytics />
     </BrowserRouter>
+    
   );
 }
 
