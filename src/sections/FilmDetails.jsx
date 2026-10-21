@@ -136,20 +136,39 @@ function FilmDetails() {
             </p>
           </div>
 
-          <div className="film-player film-drive-player">
-            <iframe
-              src={film.video}
-              title={`Watch ${film.title}`}
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="strict-origin-when-cross-origin"
-            />
-          </div>
 
-          <p className="film-player-caption">
-            {film.title} | An original film by Chandra
-          </p>
+<div className="film-player film-drive-player">
+  <iframe
+    src={film.video}
+    title={`Watch ${film.title}`}
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="strict-origin-when-cross-origin"
+  />
+</div>
+
+<p className="film-player-caption">
+  {film.title} | An original film by Chandra
+</p>
+
+<div className="film-video-fallback">
+  <p>
+    Having trouble playing this film?
+    {" "}Watch it directly on Google Drive.
+  </p>
+
+  <a
+    href={film.video.replace("/preview", "/view")}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="film-fallback-link"
+  >
+    <span>WATCH ON GOOGLE DRIVE</span>
+    <span aria-hidden="true">↗</span>
+  </a>
+</div>
+
         </section>
 
         <section className="film-overview-section">

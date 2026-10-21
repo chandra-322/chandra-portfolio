@@ -64,8 +64,11 @@ const projects = [
   },
 ];
 
+
 function VideoProject({ project }) {
   const [isOpen, setIsOpen] = useState(false);
+
+  const driveLink = project.video.replace("/preview", "/view");
 
   return (
     <article className={`editing-card editing-card-${project.number}`}>
@@ -111,14 +114,33 @@ function VideoProject({ project }) {
             allow="autoplay; fullscreen; picture-in-picture"
             allowFullScreen
             loading="eager"
-              style={{
+            style={{
               display: "block",
               width: "100%",
               height: "100%",
               border: 0,
-              }}
+            }}
           />
         )}
+      </div>
+
+      {/* Video playback fallback */}
+      <div className="editing-video-fallback">
+        <p>
+          Having trouble playing this video?
+          {" "}Watch it directly on Google Drive.
+        </p>
+
+        <a
+          href={driveLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="editing-fallback-link"
+          aria-label={`Watch ${project.title} on Google Drive`}
+        >
+          <span>WATCH ON GOOGLE DRIVE</span>
+          <span aria-hidden="true">↗</span>
+        </a>
       </div>
 
       <div className="editing-card-content">
@@ -159,6 +181,7 @@ function VideoProject({ project }) {
     </article>
   );
 }
+
 
 function VideoEditing() {
   return (
