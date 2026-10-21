@@ -11,6 +11,7 @@ import ScriptsWriting from "./sections/ScriptsWriting.jsx";
 import About from "./sections/About.jsx";
 import Contact from "./sections/Contact.jsx";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 
@@ -43,6 +44,7 @@ function App() {
         <Route path="*" element={<HomePage />} />
       </Routes>
       <Analytics />
+      <SpeedInsights/>
     </BrowserRouter>
     
   );
